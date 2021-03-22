@@ -1,0 +1,23 @@
+{
+    "name": "falves97/catalogoPDF",
+    "description": "Gera um catálogo pdf usando os produtos do WooComerce",
+    "minimum-stability": "stable",
+    "license": "GPL-3",
+    "authors": [
+      {
+        "name": "Fernando Braga Alves",
+        "email": "f.braga.alves1@gmail.com"
+      }
+    ],
+    "autoload": {
+      "psr-4": {
+        "Source\\": "source/"
+      },
+      "files": [
+        "source/Config.php"
+      ]
+    },
+    "require": {
+      
+    }
+  }
