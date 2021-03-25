@@ -53,7 +53,7 @@ diagram {
 <val>(1.0, 0.0, 0.0, 1.0, 137.0, 112.0)</val>
 </matrix>
 <width>
-<val>241.0</val>
+<val>319.0</val>
 </width>
 <height>
 <val>155.0</val>
@@ -73,7 +73,7 @@ diagram {
 <val>306.0</val>
 </width>
 <height>
-<val>121.0</val>
+<val>189.0</val>
 </height>
 <diagram>
 <ref refid="051cd858-8b08-11eb-80b0-473a5aba7f40"/>
@@ -188,7 +188,7 @@ diagram {
 <val>(1.0, 0.0, 0.0, 1.0, 138.0, 161.0)</val>
 </matrix>
 <width>
-<val>241.0</val>
+<val>319.0</val>
 </width>
 <height>
 <val>142.0</val>
@@ -228,7 +228,7 @@ diagram {
 <val>(1.0, 0.0, 0.0, 1.0, 593.0, 374.0)</val>
 </matrix>
 <points>
-<val>[(-214.0, -107.80338422723912), (-39.0, -95.24873417721517)]</val>
+<val>[(-136.0, -107.80338422723912), (-39.0, -95.24873417721517)]</val>
 </points>
 <head-connection>
 <ref refid="797ceb78-8b0a-11eb-8f29-556292356e3a"/>
@@ -693,13 +693,13 @@ diagram {
 <canvas>
 <item id="909d9934-8b09-11eb-8f29-556292356e3a" type="ClassItem">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 150.0, 160.5)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 155.0, 160.5)</val>
 </matrix>
 <width>
 <val>306.0</val>
 </width>
 <height>
-<val>108.0</val>
+<val>176.0</val>
 </height>
 <diagram>
 <ref refid="8c7ecd1e-8b09-11eb-8f29-556292356e3a"/>
@@ -736,7 +736,7 @@ diagram {
 <val>(1.0, 0.0, 0.0, 1.0, 754.0, 178.0)</val>
 </matrix>
 <points>
-<val>[(-116.0, 11.933825813465887), (-298.0, 3.654660529344085)]</val>
+<val>[(-116.0, 11.933825813465887), (-293.0, 16.97426160337554)]</val>
 </points>
 <head-connection>
 <ref refid="9f97948a-8b09-11eb-8f29-556292356e3a"/>
@@ -813,12 +813,16 @@ diagram {
 <ownedAttribute>
 <reflist>
 <ref refid="9bf4c7e4-8b09-11eb-8f29-556292356e3a"/>
+<ref refid="c70f1bba-8d9e-11eb-9b2e-a85e451e9eee"/>
+<ref refid="d305a064-8d9e-11eb-bdca-a85e451e9eee"/>
 </reflist>
 </ownedAttribute>
 <ownedOperation>
 <reflist>
 <ref refid="107ad9aa-8b0a-11eb-8f29-556292356e3a"/>
 <ref refid="2c64c6bc-8b0a-11eb-8f29-556292356e3a"/>
+<ref refid="f6fa2010-8d9e-11eb-8654-a85e451e9eee"/>
+<ref refid="43d5d53b-8da0-11eb-92b1-a85e451e9eee"/>
 </reflist>
 </ownedOperation>
 <package>
@@ -835,9 +839,6 @@ diagram {
 <class_>
 <ref refid="909d7bac-8b09-11eb-8f29-556292356e3a"/>
 </class_>
-<isStatic>
-<val>1</val>
-</isStatic>
 <name>
 <val>client</val>
 </name>
@@ -855,7 +856,7 @@ diagram {
 </reflist>
 </annotatedElement>
 <body>
-<val>O tipo Client, √© da classe Client da API woocomerce</val>
+<val>O tipo Client, È da classe Client da API woocomerce</val>
 </body>
 <presentation>
 <reflist>
@@ -867,9 +868,6 @@ diagram {
 <class_>
 <ref refid="909d7bac-8b09-11eb-8f29-556292356e3a"/>
 </class_>
-<isStatic>
-<val>1</val>
-</isStatic>
 <name>
 <val>loadProduct</val>
 </name>
@@ -882,7 +880,7 @@ diagram {
 </Operation>
 <Parameter id="107b7cc0-8b0a-11eb-8f29-556292356e3a">
 <name>
-<val>prodctJSON</val>
+<val>prodctJson</val>
 </name>
 <ownerFormalParam>
 <ref refid="107ad9aa-8b0a-11eb-8f29-556292356e3a"/>
@@ -906,11 +904,8 @@ diagram {
 <class_>
 <ref refid="909d7bac-8b09-11eb-8f29-556292356e3a"/>
 </class_>
-<isStatic>
-<val>1</val>
-</isStatic>
 <name>
-<val>loadAll</val>
+<val>loadProducts</val>
 </name>
 <ownedParameter>
 <reflist>
@@ -932,7 +927,7 @@ diagram {
 </Parameter>
 <Parameter id="2c65be0a-8b0a-11eb-8f29-556292356e3a">
 <name>
-<val>productsJSON</val>
+<val>products</val>
 </name>
 <ownerFormalParam>
 <ref refid="2c64c6bc-8b0a-11eb-8f29-556292356e3a"/>
@@ -1045,6 +1040,7 @@ diagram {
 <ownedParameter>
 <reflist>
 <ref refid="0f34f98a-8b0b-11eb-8f29-556292356e3a"/>
+<ref refid="015a82e3-8da2-11eb-b3f3-a85e451e9eee"/>
 </reflist>
 </ownedParameter>
 </Operation>
@@ -1090,7 +1086,7 @@ diagram {
 </reflist>
 </annotatedElement>
 <body>
-<val>O m√©todo makeTemplate ir√° usar o m√©todo da classe makeCatalogo</val>
+<val>O mÈtodo makeTemplate ir· usar o mÈtodo da classe makeCatalogo</val>
 </body>
 <presentation>
 <reflist>
@@ -1252,6 +1248,93 @@ diagram {
 </ownerFormalParam>
 <typeValue>
 <val>string</val>
+</typeValue>
+</Parameter>
+<Property id="c70f1bba-8d9e-11eb-9b2e-a85e451e9eee">
+<class_>
+<ref refid="909d7bac-8b09-11eb-8f29-556292356e3a"/>
+</class_>
+<name>
+<val>consumerKey</val>
+</name>
+<typeValue>
+<val>string</val>
+</typeValue>
+<visibility>
+<val>private</val>
+</visibility>
+</Property>
+<Property id="d305a064-8d9e-11eb-bdca-a85e451e9eee">
+<class_>
+<ref refid="909d7bac-8b09-11eb-8f29-556292356e3a"/>
+</class_>
+<name>
+<val>condumer_secret</val>
+</name>
+<typeValue>
+<val>string</val>
+</typeValue>
+<visibility>
+<val>private</val>
+</visibility>
+</Property>
+<Operation id="f6fa2010-8d9e-11eb-8654-a85e451e9eee">
+<class_>
+<ref refid="909d7bac-8b09-11eb-8f29-556292356e3a"/>
+</class_>
+<name>
+<val>loadAll</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="f6fa9548-8d9e-11eb-9c69-a85e451e9eee"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="f6fa9548-8d9e-11eb-9c69-a85e451e9eee">
+<direction>
+<val>return</val>
+</direction>
+<ownerFormalParam>
+<ref refid="f6fa2010-8d9e-11eb-8654-a85e451e9eee"/>
+</ownerFormalParam>
+<typeValue>
+<val>array</val>
+</typeValue>
+</Parameter>
+<Operation id="43d5d53b-8da0-11eb-92b1-a85e451e9eee">
+<class_>
+<ref refid="909d7bac-8b09-11eb-8f29-556292356e3a"/>
+</class_>
+<name>
+<val>LoadProduc</val>
+</name>
+<ownedParameter>
+<reflist>
+<ref refid="43d64a75-8da0-11eb-9ea0-a85e451e9eee"/>
+</reflist>
+</ownedParameter>
+</Operation>
+<Parameter id="43d64a75-8da0-11eb-9ea0-a85e451e9eee">
+<name>
+<val>consumerKey</val>
+</name>
+<ownerFormalParam>
+<ref refid="43d5d53b-8da0-11eb-92b1-a85e451e9eee"/>
+</ownerFormalParam>
+<typeValue>
+<val>string</val>
+</typeValue>
+</Parameter>
+<Parameter id="015a82e3-8da2-11eb-b3f3-a85e451e9eee">
+<name>
+<val>product</val>
+</name>
+<ownerFormalParam>
+<ref refid="0f330756-8b0b-11eb-8f29-556292356e3a"/>
+</ownerFormalParam>
+<typeValue>
+<val>Product</val>
 </typeValue>
 </Parameter>
 </gaphor>
