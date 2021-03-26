@@ -36,11 +36,11 @@ class LoadProductController
 
     public function makeProductTemplate(Product $product): ?string
     {
-
+        return null;
     }
 
     public function makeTemplate(): bool
     {
-
+        return false;
     }
 }

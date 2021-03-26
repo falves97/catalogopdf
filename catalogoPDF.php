@@ -19,3 +19,12 @@
  * License:           GPL v3
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  */
+
+
+function catalogoPath()
+{
+    $path = plugin_dir_url(__FILE__) . "source/View/makeCatalogo.php";
+    return $path;
+}
+
+add_shortcode('catalogo', 'catalogoPath');
