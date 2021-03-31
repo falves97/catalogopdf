@@ -7,22 +7,14 @@ use Source\Model\Entities\Product;
 
 class LoadProduct
 {
-    private Client $client;
-    private string $consumerKey;
-    private string $consumerSecret;
+    private static Client $client;
 
-    /**
-     * LoadProduct constructor.
-     * @param string $consumerKey
-     * @param string $consumerSecret
-     */
-    public function __construct(string $consumerKey, string $consumerSecret)
+    private function __construct()
     {
-        $this->consumerKey = $consumerKey;
-        $this->consumerSecret = $consumerSecret;
+
     }
 
-    public function loadProduct(string $prodctAbastrcClass): ?Product
+    public static function loadProduct($prodctAbastrcClass): ?Product
     {
         if ($prodctAbastrcClass){
             $product = new Product();
@@ -43,14 +35,17 @@ class LoadProduct
         return null;
     }
 
-    public function loadProducts(array $productsJson): ?array
+    public static function loadProducts(string $productsJson): ?array
     {
         $products = [];
 
         if ($productsJson){
+            $json = json_decode($productsJson);
 
-            foreach (json_decode($productsJson) as $key => $pValue) {
-                $product = $this->loadProduct($pValue);
+            var_dump($json);
+
+            foreach ( $json as $key => $pValue) {
+                $product = self::loadProduct($pValue);
                 $products[$key] = $product;
             }
 
@@ -60,12 +55,14 @@ class LoadProduct
         return null;
     }
 
-    public function loadAll(): ?array
+    public static function loadAll(): ?array
     {
-        $json = $this->client->get('products');
+        self::$client = ClientData::getInstance();
 
-        $products = $this->loadProducts($json);
+        $json = self::$client->get('products');
 
-        return null;
+        $products = self::loadProducts($json);
+
+        return $products;
     }
 }
