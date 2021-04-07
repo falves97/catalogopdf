@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/Ubuntu-Bold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/Ubuntu-Regular.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/Ubuntu-Medium.ttf');
+    font-weight: 500;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.product-content {
+    height: 74.25mm;
+    width: 210mm;
+}
+
+.product-content-img, .product-content-desc {
+    height: 74.25mm;
+    width: 105mm;
+    text-align: center;
+}
+
+.product-content-img {
+    overflow: hidden;
+}
+
+.product-content-img img {
+    width: 90mm;
+}
+
+.float-lf {
+    float: left;
+}
+
+.float-rg {
+    float: right;
+}
+
+.product-content-desc h1 {
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 5mm;
+    padding: 2mm 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+
+.product-content-desc p {
+    background-color: #eaeaea;
+    border-radius: 0 0 5mm 5mm;
+    margin: auto;
+    height: 50mm;
+    overflow: hidden;
+    padding: 2mm 6mm 1.5mm;
+    width: 80mm;
+    text-align: left;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.product-btn {
+    text-decoration: none;
+    color: orangered;
+    font-size: 1.2em;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}

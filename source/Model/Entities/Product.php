@@ -7,6 +7,23 @@ class Product {
     private string $name;
     private string $description;
     private string $imagePath;
+    private string $linkProduct;
+
+    /**
+     * @return string
+     */
+    public function getLinkProduct(): string
+    {
+        return $this->linkProduct;
+    }
+
+    /**
+     * @param string $linkProduct
+     */
+    public function setLinkProduct(string $linkProduct): void
+    {
+        $this->linkProduct = $linkProduct;
+    }
 
     /**
      * @return int
