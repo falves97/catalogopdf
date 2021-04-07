@@ -7,6 +7,7 @@ use Automattic\WooCommerce\Client;
 
 class ClientData
 {
+    private const pathApi = __DIR__ . "/../../include/api.json";
     private static string $host = "";
     private static string $consumerKey = "";
     private static string $consumerSecret = "";
@@ -77,7 +78,21 @@ class ClientData
         self::$options = $options;
     }
 
-    public static function clientLoad(string $host, string $consumerKey, string $consumerSecret, array $options)
+    public static function loadDocApi() {
+        $file = fopen(self::pathApi, "r");
+        $json = fread($file, filesize(self::pathApi));
+        fclose($file);
+        $data = json_decode($json, true);
+
+        self::loadClientData(
+            $data["host"],
+            $data["consumerKey"],
+            $data["consumerSecret"],
+            $data["options"]
+        );
+    }
+
+    public static function loadClientData(string $host, string $consumerKey, string $consumerSecret, array $options)
     {
         self::setHost($host);
         self::setConsumerKey($consumerKey);
@@ -88,19 +103,13 @@ class ClientData
     public static function getInstance(): ?Client
     {
         if(!self::$client){
-            $file_name = __DIR__ . "/../../include/api.json";
-            $file = fopen($file_name, "r");
-            $json = fread($file, filesize($file_name));
-            fclose($file);
-            $data = json_decode($json);
-            
-            var_dump($data);
+            self::loadDocApi();
 
             self::$client = new Client(
-                $data->host,
-                $data->consumerKey,
-                $data->consumerSecret,
-                $data->options->version
+                self::getHost(),
+                self::getConsumerKey(),
+                self::getConsumerSecret(),
+                self::getOptions()
             );
         }
 

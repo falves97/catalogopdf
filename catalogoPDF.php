@@ -19,7 +19,6 @@ use Source\Model\Data\LoadProduct;
  * Description:       Description of the plugin.
  * Version:           0.0.1
  * Requires at least: 5.7
- * Requires PHP:      7.4
  * Author:            Fernando Braga Alves
  * License:           GPL v3
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
@@ -37,9 +36,9 @@ function loadClientData() {
 
         //atualizando dados
         $data = json_decode($json);
-        $data->host = "https://jesaudeebelezacombr.com.br/";
-        $data->consumerKey = "ck_c0c059ef1fadbef14cd51d1d1a784d2424bcf298";
-        $data->consumerSecret = "cs_ef2dc2bd061b609ca3760d3ed1035db9408c3efa";
+        $data->host = site_url();
+        $data->consumerKey = "ck_092ca1022be96ccb40eb901714924f82410e837b";
+        $data->consumerSecret = "cs_1808a3e39cb74866e5c46ae73129030772aa5576";
         $json = json_encode($data);
 
         //atualizando arquivo
@@ -64,4 +63,4 @@ add_shortcode( 'teste', function() {
 
 add_shortcode( 'catalogo', 'catalogoPath' );
 
-add_action( 'plugins_loaded', 'loadClientData' );
+register_activation_hook(__FILE__, 'loadClientData');

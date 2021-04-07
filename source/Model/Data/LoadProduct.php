@@ -23,11 +23,13 @@ class LoadProduct
             $name = $prodctAbastrcClass->name;
             $description = strip_tags($prodctAbastrcClass->description);
             $imagePath = $prodctAbastrcClass->images[0]->src;
+            $linkProduct = $prodctAbastrcClass->permalink;
 
             $product->setId($id);
             $product->setName($name);
             $product->setDescription($description);
             $product->setImagePath($imagePath);
+            $product->setLinkProduct($linkProduct);
 
             return $product;
         }
@@ -41,8 +43,6 @@ class LoadProduct
 
         if ($productsJson){
             $json = json_decode($productsJson);
-
-            var_dump($json);
 
             foreach ( $json as $key => $pValue) {
                 $product = self::loadProduct($pValue);
@@ -60,6 +60,7 @@ class LoadProduct
         self::$client = ClientData::getInstance();
 
         $json = self::$client->get('products');
+        $json = json_encode($json);
 
         $products = self::loadProducts($json);
 
