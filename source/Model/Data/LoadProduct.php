@@ -7,14 +7,14 @@ use Source\Model\Entities\Product;
 
 class LoadProduct
 {
-    private static Client $client;
+    private static $client;
 
     private function __construct()
     {
 
     }
 
-    public static function loadProduct($prodctAbastrcClass): ?Product
+    public static function loadProduct($prodctAbastrcClass)
     {
         if ($prodctAbastrcClass){
             $product = new Product();
@@ -37,7 +37,7 @@ class LoadProduct
         return null;
     }
 
-    public static function loadProducts(string $productsJson): ?array
+    public static function loadProducts($productsJson)
     {
         $products = [];
 
@@ -55,7 +55,7 @@ class LoadProduct
         return null;
     }
 
-    public static function loadAll(): ?array
+    public static function loadAll()
     {
         self::$client = ClientData::getInstance();
 

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Source\Model\Data;
 
 use Automattic\WooCommerce\Client;
@@ -8,24 +7,24 @@ use Automattic\WooCommerce\Client;
 class ClientData
 {
     private const pathApi = __DIR__ . "/../../include/api.json";
-    private static string $host = "";
-    private static string $consumerKey = "";
-    private static string $consumerSecret = "";
-    private static array $options = [];
+    private static $host = "";
+    private static $consumerKey = "";
+    private static $consumerSecret = "";
+    private static $options = [];
     private static $client = null;
 
     /**
      * @return string
      */
-    public static function getHost(): string
+    public static function getHost()
     {
         return self::$host;
     }
 
     /**
-     * @param string $host
+     * @param $host
      */
-    public static function setHost(string $host): void
+    public static function setHost($host)
     {
         self::$host = $host;
     }
@@ -33,15 +32,15 @@ class ClientData
     /**
      * @return string
      */
-    public static function getConsumerKey(): string
+    public static function getConsumerKey()
     {
         return self::$consumerKey;
     }
 
     /**
-     * @param string $consumerKey
+     * @param $consumerKey
      */
-    public static function setConsumerKey(string $consumerKey): void
+    public static function setConsumerKey($consumerKey)
     {
         self::$consumerKey = $consumerKey;
     }
@@ -49,15 +48,15 @@ class ClientData
     /**
      * @return string
      */
-    public static function getConsumerSecret(): string
+    public static function getConsumerSecret()
     {
         return self::$consumerSecret;
     }
 
     /**
-     * @param string $consumerSecret
+     * @param $consumerSecret
      */
-    public static function setConsumerSecret(string $consumerSecret): void
+    public static function setConsumerSecret($consumerSecret)
     {
         self::$consumerSecret = $consumerSecret;
     }
@@ -65,15 +64,15 @@ class ClientData
     /**
      * @return array
      */
-    public static function getOptions(): array
+    public static function getOptions()
     {
         return self::$options;
     }
 
     /**
-     * @param array $options
+     * @param $options
      */
-    public static function setOptions(array $options): void
+    public static function setOptions($options)
     {
         self::$options = $options;
     }
@@ -84,15 +83,17 @@ class ClientData
         fclose($file);
         $data = json_decode($json, true);
 
+        $site = site_url();
+
         self::loadClientData(
-            $data["host"],
+            $site,
             $data["consumerKey"],
             $data["consumerSecret"],
             $data["options"]
         );
     }
 
-    public static function loadClientData(string $host, string $consumerKey, string $consumerSecret, array $options)
+    public static function loadClientData($host, $consumerKey, $consumerSecret, $options)
     {
         self::setHost($host);
         self::setConsumerKey($consumerKey);
@@ -100,7 +101,7 @@ class ClientData
         self::setOptions($options);
     }
 
-    public static function getInstance(): ?Client
+    public static function getInstance()
     {
         if(!self::$client){
             self::loadDocApi();
@@ -114,5 +115,9 @@ class ClientData
         }
 
         return self::$client;
+    }
+
+    public static function url() {
+        return site_url();
     }
 }

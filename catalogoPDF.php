@@ -2,9 +2,6 @@
 
 require_once __DIR__ . "/vendor/autoload.php";
 
-use Source\Model\Data\ClientData;
-use Source\Model\Data\LoadProduct;
-
 /**
  * catalogoPDF
  *
@@ -24,43 +21,18 @@ use Source\Model\Data\LoadProduct;
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-function loadClientData() {
-    
-    
-    try {
-        //lendo arquivo
-        $file_name = plugin_dir_path( __FILE__ ) . "source/include/api.json";
-        $file = fopen($file_name, "r");
-        $json = fread($file, filesize($file_name));
-        fclose($file);
 
-        //atualizando dados
-        $data = json_decode($json);
-        $data->host = site_url();
-        $data->consumerKey = "ck_092ca1022be96ccb40eb901714924f82410e837b";
-        $data->consumerSecret = "cs_1808a3e39cb74866e5c46ae73129030772aa5576";
-        $json = json_encode($data);
+defined( 'ABSPATH' ) || exit;
 
-        //atualizando arquivo
-        $file = fopen($file_name, "w");
-        fwrite($file, $json);
+function url_catalogo_include( $template ) {
+    if ( get_query_var( 'catalogoPDF' ) ) {
+        $template_name = 'templateTeste.php';
+
+        $template = locate_template( $template_name );
+        if ( '' === $template ) {
+            $template = __DIR__ . '/' . $template_name;
+        }
     }
-    catch(Exception $e) {
-        exit($e->getMessage());
-    }
-    
+    return $template;
 }
-
-function catalogoPath()
-{
-    $path = plugin_dir_url( __FILE__ ) . "source/View/makeCatalogo.php";
-    return $path;
-}
-
-add_shortcode( 'teste', function() {
-    return plugin_dir_url( __FILE__ );
-});
-
-add_shortcode( 'catalogo', 'catalogoPath' );
-
-register_activation_hook(__FILE__, 'loadClientData');
+add_filter( 'template_include', 'url_catalogo_include' );

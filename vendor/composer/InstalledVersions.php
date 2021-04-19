@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '9097e490087dcf22f5d340d9c2ddcde1b5d8d1bc',
+    'reference' => '3eaf7245b281d47e9a445dc4ad836117e7fcefaa',
     'name' => 'falves97/catalogopdf',
   ),
   'versions' => 
@@ -60,7 +60,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '9097e490087dcf22f5d340d9c2ddcde1b5d8d1bc',
+      'reference' => '3eaf7245b281d47e9a445dc4ad836117e7fcefaa',
     ),
     'phenx/php-font-lib' => 
     array (

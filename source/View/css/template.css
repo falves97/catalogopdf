@@ -28,7 +28,7 @@
 
 .product-content-img, .product-content-desc {
     height: 74.25mm;
-    width: 105mm;
+    width: 104mm;
     text-align: center;
 }
 
@@ -40,14 +40,6 @@
     width: 90mm;
 }
 
-.float-lf {
-    float: left;
-}
-
-.float-rg {
-    float: right;
-}
-
 .product-content-desc h1 {
     background-color: cornflowerblue;
     color: white;
@@ -55,6 +47,12 @@
     padding: 2mm 0;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
+    font-size: 1.4em;
+
+    width: 104mm;
+    white-space: nowrap;
+    overflow: no-display;
+    text-overflow: ellipsis;
 }
 
 .product-content-desc p {

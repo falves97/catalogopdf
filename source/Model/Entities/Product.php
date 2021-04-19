@@ -3,24 +3,24 @@
 namespace Source\Model\Entities;
 
 class Product {
-    private int $id;
-    private string $name;
-    private string $description;
-    private string $imagePath;
-    private string $linkProduct;
+    private $id;
+    private $name;
+    private $description;
+    private $imagePath;
+    private $linkProduct;
 
     /**
      * @return string
      */
-    public function getLinkProduct(): string
+    public function getLinkProduct()
     {
         return $this->linkProduct;
     }
 
     /**
-     * @param string $linkProduct
+     * @param $linkProduct
      */
-    public function setLinkProduct(string $linkProduct): void
+    public function setLinkProduct($linkProduct)
     {
         $this->linkProduct = $linkProduct;
     }
@@ -28,15 +28,15 @@ class Product {
     /**
      * @return int
      */
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
 
     /**
-     * @param int $id
+     * @param $id
      */
-    public function setId(int $id): void
+    public function setId($id)
     {
         $this->id = $id;
     }
@@ -44,15 +44,15 @@ class Product {
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
 
     /**
-     * @param string $name
+     * @param $name
      */
-    public function setName(string $name): void
+    public function setName($name)
     {
         $this->name = $name;
     }
@@ -60,15 +60,15 @@ class Product {
     /**
      * @return string
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->description;
     }
 
     /**
-     * @param string $description
+     * @param $description
      */
-    public function setDescription(string $description): void
+    public function setDescription($description)
     {
         $this->description = $description;
     }
@@ -76,15 +76,15 @@ class Product {
     /**
      * @return string
      */
-    public function getImagePath(): string
+    public function getImagePath()
     {
         return $this->imagePath;
     }
 
     /**
-     * @param string $imagePath
+     * @param $imagePath
      */
-    public function setImagePath(string $imagePath): void
+    public function setImagePath($imagePath)
     {
         $this->imagePath = $imagePath;
     }

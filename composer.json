@@ -17,6 +17,7 @@
         "source/Config.php"
       ]
     },
+    "type": "wordpress-plugin",
     "require": {
       "dompdf/dompdf": "v1.0.*",
       "automattic/woocommerce": "3.*"

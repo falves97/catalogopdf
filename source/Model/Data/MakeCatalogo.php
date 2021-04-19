@@ -6,35 +6,74 @@ namespace Source\Model\Data;
 
 class MakeCatalogo
 {
-    private string $catalogoPath;
+    private $template;
+    private $modelo;
 
     /**
      * MakeCatalogo constructor.
-     * @param string $catalogoPath
      */
-    public function __construct(string $catalogoPath)
+    public function __construct()
     {
-        $this->catalogoPath = $catalogoPath;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getTemplate()
+    {
+        return $this->template;
     }
 
     /**
-     * @return string
+     * @param mixed $template
      */
-    public function getCatalogoPath(): string
+    public function setTemplate($template): void
     {
-        return $this->catalogoPath;
+        $this->template = $template;
     }
 
     /**
-     * @param string $catalogoPath
+     * @return mixed
      */
-    public function setCatalogoPath(string $catalogoPath): void
+    public function getModelo()
     {
-        $this->catalogoPath = $catalogoPath;
+        return $this->modelo;
     }
 
-    public function make(string $template): bool
+    /**
+     * @param mixed $modelo
+     */
+    public function setModelo($modelo): void
     {
-        return false;
+        $this->modelo = $modelo;
+    }
+
+
+
+    public function makeProduct($product) {
+        $model = $this->getModelo();
+        $model = str_replace("::pathImg::", $product->getImagePath(), $model);
+        $model = str_replace("::name::", $product->getName(), $model);
+        $model = str_replace("::description::", $product->getDescription(), $model);
+        $model = str_replace("::linkProduct::", $product->getLinkProduct(), $model);
+
+        return $model;
+    }
+
+    public function make()
+    {
+        $products = LoadProduct::loadAll();
+
+        $model = "";
+
+        for ($i = 0; $i < count($products); $i++) {
+            $model = $model . $this->makeProduct($products[$i]);
+        }
+
+        $template = $this->template;
+        $template = str_replace("::modelo::", $model, $template);
+
+        return $template;
     }
 }
